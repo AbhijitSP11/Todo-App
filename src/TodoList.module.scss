@@ -1,0 +1,29 @@
+.todoList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todoItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .todoItem span {
+    flex: 1;
+  }
+  
+  .todoItem button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .todoItem button.editButton {
+    background-color: #2196f3;
+  }
+  
