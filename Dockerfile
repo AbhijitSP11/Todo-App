@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expose the container port (e.g., port 3000)
-EXPOSE 3000
+EXPOSE 5173
 
 # Start the React app when the container starts
 CMD ["npm", "run", "dev"]
