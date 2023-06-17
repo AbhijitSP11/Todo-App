@@ -1,6 +1,8 @@
 .todoList {
     list-style-type: none;
-    padding: 0;
+    padding: 0.5rem 1rem;
+    // border: 2px solid green;
+    border-radius: 0.5rem;
   }
   
   .todoItem {
@@ -16,7 +18,7 @@
   .todoItem button {
     margin-left: 10px;
     padding: 5px 10px;
-    background-color: #f44336;
+    background-color: transparent;
     color: white;
     border: none;
     border-radius: 4px;
@@ -24,6 +26,6 @@
   }
   
   .todoItem button.editButton {
-    background-color: #2196f3;
+    // background-color: #2196f3;
   }
   

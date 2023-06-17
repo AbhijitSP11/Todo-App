@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from './TodoList.module.scss';
+import {MdDeleteOutline} from 'react-icons/md';
+import {RiEditBoxLine} from 'react-icons/ri';
+
 
 interface TodoListProps {
   tasks: string[];
@@ -17,13 +20,13 @@ const TodoList: React.FC<TodoListProps> = ({ tasks, deleteTask, editTask }) => {
             className={styles.deleteButton}
             onClick={() => deleteTask(index)}
           >
-            Delete
+            <MdDeleteOutline size={20}/>
           </button>
           <button
             className={styles.editButton}
             onClick={() => editTask(index, task)}
           >
-            Edit
+            <RiEditBoxLine size={20}/>
           </button>
         </li>
       ))}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {AiOutlinePlus} from 'react-icons/ai';
 import styles from './TodoInput.module.scss';
 
 interface TodoInputProps {
@@ -24,11 +25,13 @@ const TodoInput: React.FC<TodoInputProps> = ({ addTask }) => {
     <form className={styles.todoInput} onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Let's plan the day"
+        placeholder="What's up..."
         value={inputValue}
         onChange={handleInputChange}
       />
-      <button type="submit">Add</button>
+      <button type="submit">
+        <AiOutlinePlus />
+      </button>
     </form>
   );
 };

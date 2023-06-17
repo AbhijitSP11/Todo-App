@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>Todo App</h1>
+      <h1>✅ Todo App</h1>
       <TodoInput addTask={addTask} />
       <TodoList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
     </div>
