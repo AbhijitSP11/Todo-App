@@ -14,11 +14,14 @@ This is a simple Todo application built with React and TypeScript. It allows you
     <https://github.com/AbhijitSP11/Todo-App.git>
 
 2. Navigate to the project directory:
+    cd TODO-APP
+3. Install Vite and the necessary dependencies:
+   npm i vite or yarn add vite
 
-3. Start the development server:
+4. Start the development server:
     yarn dev or npm run dev
 
-4. Open your browser and visit `http://localhost:3000` to see the application.
+5. Open your browser and visit `http://localhost:3000` to see the application.
 
 ## Technologies Used
 
