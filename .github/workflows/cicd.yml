@@ -55,7 +55,7 @@ jobs:
   
       - name: Update environment
         run: |
-          aws elasticbeanstalk update-environment --environment-name Docker-React-env --version-label Sample
+          aws elasticbeanstalk update-environment --environment-name Docker-React-env --version-label Samples
       
 
       
