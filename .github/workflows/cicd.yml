@@ -38,17 +38,17 @@ jobs:
       
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
-
-      - name: Configure AWS credentials
-        uses: einaregilsson/beanstalk-deploy
+    
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: 
+          application_name: Docker-React
           environment_name: Docker-React-env
           existing_bucket_name: elasticbeanstalk-eu-north-1-401735561383
-          region: eu-north-1 
           version_label: ${{ github.sha }}
-          deployment_package: deploy.zip 
+          region: eu-north-1
+          deployment_package: deploy.zip
 
       
