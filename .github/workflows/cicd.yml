@@ -45,14 +45,17 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set region eu-north-1
       
-          - name: Upload deployment package to S3
-          run: aws s3 cp deploy.zip s3://elasticbeanstalk-eu-north-1-401735561383/deploy.zip
+      - name: Upload deployment package to S3
+        run: |
+          aws s3 cp deploy.zip s3://elasticbeanstalk-eu-north-1-401735561383/deploy.zip
   
-        - name: Create application version
-          run: aws elasticbeanstalk create-application-version --application-name Docker-React --version-label 1234 --source-bundle S3Bucket=elasticbeanstalk-eu-north-1-401735561383,S3Key=deploy.zip
+      - name: Create application version
+        run: |
+          aws elasticbeanstalk create-application-version --application-name Docker-React --version-label 1234 --source-bundle S3Bucket=elasticbeanstalk-eu-north-1-401735561383,S3Key=deploy.zip
   
-        - name: Update environment
-          run: aws elasticbeanstalk update-environment --environment-name Docker-React-env --version-label 1234
+      - name: Update environment
+        run: |
+          aws elasticbeanstalk update-environment --environment-name Docker-React-env --version-label 1234
       
 
       
