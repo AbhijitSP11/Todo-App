@@ -51,11 +51,11 @@ jobs:
   
       - name: Create application version
         run: |
-          aws elasticbeanstalk create-application-version --application-name Docker-React --version-label 1234 --source-bundle S3Bucket=elasticbeanstalk-eu-north-1-401735561383,S3Key=deploy.zip
+          aws elasticbeanstalk create-application-version --application-name Docker-React --version-label Sample --source-bundle S3Bucket=elasticbeanstalk-eu-north-1-401735561383,S3Key=deploy.zip
   
       - name: Update environment
         run: |
-          aws elasticbeanstalk update-environment --environment-name Docker-React-env --version-label 1234
+          aws elasticbeanstalk update-environment --environment-name Docker-React-env --version-label Sample
       
 
       
