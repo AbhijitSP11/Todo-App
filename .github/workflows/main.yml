@@ -1,0 +1,38 @@
+# .yml file for CI/CD pipeline
+
+# Define the pipeline stages
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger the pipeline on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger the pipeline on pull requests to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Action to check out your repository's code
+
+      - name: Install dependencies and build
+        run: |
+          yarn install  # Install project dependencies
+          yarn build    # Build the React app
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Action to check out your repository's code
+
+      - name: Build and run Docker container
+        run: |
+          docker build -t todo-app .  # Build the Docker image
+          docker run -d -p 5173:5173 todo-app  # Run the Docker container
